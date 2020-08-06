@@ -1,0 +1,113 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="bakery.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - 2Wrights'Delights</title>
+    <meta name="description" content="2Wrights'Delights is a small business in North Texas. We bake cookies, cakes, brownies, and fudge.">
+    <meta name="keywords" content="2 Wrights Delights,2 Wrights' Delights,2WrightsDelights,2Wrights'Delights,cookies,cakes,brownies,fudge,Dallas cookies,North Texas cookies,Texas cookies,Dallas cakes,North Texas cakes,Texas cakes,Dallas brownies,North Texas brownies,Texas brownies,Dallas fudge,North Texas Fudge,Texas fudge,homemade cookies,homemade cake,homemade brownies,homemade fudge" >
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Galada&display=swap" rel="stylesheet">
+    
+    <%--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>--%>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+                 <asp:ScriptReference Name="jquery.ui.combined" />
+            </Scripts>
+        </asp:ScriptManager>
+
+<%--        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">2WrightsDelights</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/">Menu</a></li>
+                        <li><a runat="server" href="~/">Order</a></li>
+                        <li><a runat="server" href="~/">F.A.Q.</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>--%>
+       <h1><p class="text-center dancingScriptFont"><span>2</span><span class="dancingScriptFont pinkUnderline">Wrights' Delights</span></p></h1>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-nowrap ">
+    <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar5">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+              <a class="navbar-brand" runat="server" href="~/">2Wrights'Delights</a>
+    <%--<span class="navbar-brand w-100 customFont"><a class="nav-link" runat="server" href="~/">2Wrights'Delights</a></span>--%>
+    <div class="navbar-collapse collapse w-100 justify-content-left" id="navbar5">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link active customFont paddingForMenu" runat="server" href="~/About">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active customFont paddingForMenu" runat="server" href="~/">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active customFont paddingForMenu" runat="server" href="~/Order">Order</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active customFont paddingForMenu" runat="server" href="~/FAQ">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active customFont paddingForMenu" runat="server" href="~/Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="w-100"><!--spacer--></div>
+</nav>
+
+
+          <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+               <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - 2Wrights'Delights</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
